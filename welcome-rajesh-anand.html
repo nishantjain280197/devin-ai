@@ -5,449 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome Rajesh Anand | BIC Team - Gurgaon</title>
     <style>
-        /* Reset & Base */
         *, *::before, *::after {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
 
-        :root {
-            --primary: #1a56db;
-            --primary-dark: #1244b0;
-            --primary-light: #e8effc;
-            --accent: #f59e0b;
-            --accent-dark: #d97706;
-            --success: #059669;
-            --white: #ffffff;
-            --gray-50: #f9fafb;
-            --gray-100: #f3f4f6;
-            --gray-600: #4b5563;
-            --gray-700: #374151;
-            --gray-800: #1f2937;
-            --gray-900: #111827;
-            --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            --radius: 12px;
-            --shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
-        }
-
         body {
-            font-family: var(--font);
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
-            color: var(--white);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 50%, #1a56db 100%);
+            color: #ffffff;
             overflow: hidden;
-            user-select: none;
-        }
-
-        /* Slider Container */
-        .slider-container {
             position: relative;
-            width: 100vw;
-            height: 100vh;
-            overflow: hidden;
         }
 
-        /* Slides Track */
-        .slides-track {
-            display: flex;
-            width: 500vw;
-            height: 100vh;
-            transition: transform 0.8s cubic-bezier(0.65, 0, 0.35, 1);
-        }
-
-        /* Individual Slide */
-        .slide {
-            width: 100vw;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        /* Background Decorations */
-        .slide::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -20%;
-            width: 600px;
-            height: 600px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(26, 86, 219, 0.15) 0%, transparent 70%);
-            pointer-events: none;
-        }
-
-        .slide::after {
-            content: '';
-            position: absolute;
-            bottom: -30%;
-            left: -10%;
-            width: 400px;
-            height: 400px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(245, 158, 11, 0.1) 0%, transparent 70%);
-            pointer-events: none;
-        }
-
-        /* Slide Content */
-        .slide-content {
-            position: relative;
-            z-index: 2;
-            text-align: center;
-            max-width: 850px;
-            padding: 2rem;
-            animation: fadeInUp 0.6s ease forwards;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Slide 1 - Welcome */
-        .slide-1 {
-            background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 40%, #1a56db 100%);
-        }
-
-        .welcome-badge {
-            display: inline-block;
-            background: linear-gradient(135deg, var(--accent), var(--accent-dark));
-            color: var(--gray-900);
-            padding: 0.5rem 1.5rem;
-            border-radius: 30px;
-            font-size: 0.9rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 2rem;
-            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
-        }
-
-        .guest-name {
-            font-size: 3.5rem;
-            font-weight: 800;
-            line-height: 1.2;
-            margin-bottom: 0.75rem;
-            background: linear-gradient(135deg, #ffffff 0%, #93c5fd 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .guest-title {
-            font-size: 1.4rem;
-            color: rgba(255, 255, 255, 0.8);
-            font-weight: 400;
-            margin-bottom: 2rem;
-        }
-
-        .location-info {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            padding: 0.75rem 1.5rem;
-            border-radius: 30px;
-            font-size: 1rem;
-            border: 1px solid rgba(255, 255, 255, 0.15);
-        }
-
-        .location-icon {
-            font-size: 1.2rem;
-        }
-
-        /* Slide 2 - About Visit */
-        .slide-2 {
-            background: linear-gradient(135deg, #1e293b 0%, #0f4c75 40%, #1a56db 100%);
-        }
-
-        .section-label {
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            color: var(--accent);
-            font-weight: 700;
-            margin-bottom: 1rem;
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            line-height: 1.3;
-        }
-
-        .section-text {
-            font-size: 1.15rem;
-            color: rgba(255, 255, 255, 0.8);
-            line-height: 1.8;
-            max-width: 700px;
-            margin: 0 auto 2rem;
-        }
-
-        .visit-details {
-            display: flex;
-            gap: 1.5rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 2rem;
-        }
-
-        .detail-card {
-            background: rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            border-radius: var(--radius);
-            padding: 1.5rem 2rem;
-            min-width: 180px;
-            transition: transform 0.3s ease;
-        }
-
-        .detail-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .detail-icon {
-            font-size: 2rem;
-            margin-bottom: 0.75rem;
-        }
-
-        .detail-label {
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: rgba(255, 255, 255, 0.5);
-            margin-bottom: 0.25rem;
-        }
-
-        .detail-value {
-            font-size: 1.1rem;
-            font-weight: 600;
-        }
-
-        /* Slide 3 - BIC Team */
-        .slide-3 {
-            background: linear-gradient(135deg, #0f172a 0%, #1b3a4b 40%, #065f46 100%);
-        }
-
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.25rem;
-            margin-top: 2rem;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .team-value {
-            background: rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            border-radius: var(--radius);
-            padding: 1.5rem 1rem;
-            text-align: center;
-            transition: transform 0.3s ease, background 0.3s ease;
-        }
-
-        .team-value:hover {
-            transform: translateY(-3px);
-            background: rgba(255, 255, 255, 0.12);
-        }
-
-        .team-value-icon {
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .team-value-text {
-            font-size: 0.95rem;
-            font-weight: 600;
-        }
-
-        /* Slide 4 - Agenda */
-        .slide-4 {
-            background: linear-gradient(135deg, #1e293b 0%, #312e81 40%, #4c1d95 100%);
-        }
-
-        .agenda-list {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            margin-top: 2rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-            text-align: left;
-        }
-
-        .agenda-item {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            background: rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            border-radius: var(--radius);
-            padding: 1.25rem 1.5rem;
-            transition: transform 0.3s ease;
-        }
-
-        .agenda-item:hover {
-            transform: translateX(8px);
-        }
-
-        .agenda-number {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--accent), var(--accent-dark));
-            color: var(--gray-900);
-            font-weight: 800;
-            font-size: 1rem;
-            flex-shrink: 0;
-        }
-
-        .agenda-text {
-            font-size: 1.05rem;
-            font-weight: 500;
-            line-height: 1.4;
-        }
-
-        /* Slide 5 - Closing */
-        .slide-5 {
-            background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 40%, #1a56db 100%);
-        }
-
-        .closing-message {
-            font-size: 3rem;
-            font-weight: 800;
-            line-height: 1.3;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(135deg, #ffffff 0%, #fbbf24 50%, #f59e0b 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .closing-sub {
-            font-size: 1.3rem;
-            color: rgba(255, 255, 255, 0.8);
-            margin-bottom: 2.5rem;
-            line-height: 1.6;
-        }
-
-        .bic-signature {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.75rem;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            padding: 1rem 2rem;
-            border-radius: 30px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            border: 1px solid rgba(255, 255, 255, 0.15);
-        }
-
-        .bic-logo-text {
-            font-size: 1.4rem;
-            font-weight: 800;
-            color: var(--accent);
-        }
-
-        /* Navigation */
-        .nav-controls {
-            position: fixed;
-            bottom: 2rem;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-            z-index: 100;
-            background: rgba(0, 0, 0, 0.4);
-            backdrop-filter: blur(15px);
-            padding: 0.75rem 1.5rem;
-            border-radius: 50px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .nav-btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            background: transparent;
-            color: var(--white);
-            font-size: 1.2rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .nav-btn:hover:not(:disabled) {
-            background: rgba(255, 255, 255, 0.15);
-            border-color: rgba(255, 255, 255, 0.6);
-            transform: scale(1.1);
-        }
-
-        .nav-btn:disabled {
-            opacity: 0.3;
-            cursor: not-allowed;
-        }
-
-        /* Dots */
-        .nav-dots {
-            display: flex;
-            gap: 0.5rem;
-        }
-
-        .nav-dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.3);
-            border: none;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .nav-dot.active {
-            background: var(--accent);
-            width: 28px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(245, 158, 11, 0.5);
-        }
-
-        /* Slide Counter */
-        .slide-counter {
-            position: fixed;
-            top: 1.5rem;
-            right: 2rem;
-            font-size: 0.85rem;
-            color: rgba(255, 255, 255, 0.5);
-            z-index: 100;
-            font-weight: 600;
-            letter-spacing: 1px;
-        }
-
-        /* Decorative Particles */
+        /* Floating particles */
         .particles {
             position: fixed;
             top: 0;
@@ -455,7 +31,7 @@
             width: 100%;
             height: 100%;
             pointer-events: none;
-            z-index: 1;
+            z-index: 0;
             overflow: hidden;
         }
 
@@ -463,366 +39,213 @@
             position: absolute;
             width: 4px;
             height: 4px;
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.12);
             border-radius: 50%;
             animation: float linear infinite;
         }
 
         @keyframes float {
-            0% {
-                transform: translateY(100vh) rotate(0deg);
-                opacity: 0;
-            }
-            10% {
-                opacity: 1;
-            }
-            90% {
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(-10vh) rotate(720deg);
-                opacity: 0;
-            }
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-10vh) rotate(720deg); opacity: 0; }
         }
 
-        /* Confetti on last slide */
-        .confetti-container {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            overflow: hidden;
+        /* Main card */
+        .welcome-card {
+            position: relative;
             z-index: 1;
+            background: rgba(255, 255, 255, 0.06);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 24px;
+            padding: 3rem 3.5rem;
+            max-width: 900px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.3);
+            animation: cardIn 0.8s ease forwards;
         }
 
-        .confetti {
-            position: absolute;
-            width: 10px;
-            height: 10px;
-            top: -10px;
-            animation: confetti-fall linear infinite;
+        @keyframes cardIn {
+            from { opacity: 0; transform: translateY(30px) scale(0.97); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
         }
 
-        @keyframes confetti-fall {
-            0% {
-                transform: translateY(-10px) rotate(0deg);
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(100vh) rotate(720deg);
-                opacity: 0.5;
-            }
+        /* Badge */
+        .welcome-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+            color: #1f2937;
+            padding: 0.4rem 1.4rem;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2.5px;
+            margin-bottom: 1.75rem;
+            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
+        }
+
+        /* Photo */
+        .guest-photo {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: top center;
+            border: 4px solid rgba(255, 255, 255, 0.25);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+            margin-bottom: 1.5rem;
+            animation: photoIn 1s ease 0.3s both;
+        }
+
+        @keyframes photoIn {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        /* Name & Title */
+        .guest-name {
+            font-size: 2.8rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 0.4rem;
+            background: linear-gradient(135deg, #ffffff 0%, #93c5fd 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .guest-title {
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.75);
+            font-weight: 400;
+            margin-bottom: 1.75rem;
+        }
+
+        /* Divider */
+        .divider {
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #f59e0b, #1a56db);
+            border-radius: 3px;
+            margin: 0 auto 1.75rem;
+        }
+
+        /* Message */
+        .welcome-message {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.8;
+            max-width: 650px;
+            margin: 0 auto 2rem;
+        }
+
+        /* Location pill */
+        .location-info {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 0.65rem 1.4rem;
+            border-radius: 30px;
+            font-size: 0.95rem;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            margin-bottom: 2rem;
+        }
+
+        /* Team signature */
+        .team-signature {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            padding: 0.75rem 1.75rem;
+            border-radius: 30px;
+            font-size: 1rem;
+            font-weight: 600;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+        .team-logo {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: #f59e0b;
         }
 
         /* Responsive */
         @media (max-width: 768px) {
+            .welcome-card {
+                padding: 2rem 1.5rem;
+            }
+
             .guest-name {
-                font-size: 2.2rem;
-            }
-
-            .section-title {
-                font-size: 1.8rem;
-            }
-
-            .closing-message {
                 font-size: 2rem;
             }
 
-            .team-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 0.75rem;
-            }
-
-            .visit-details {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .detail-card {
-                width: 100%;
-                max-width: 250px;
-            }
-
-            .slide-content {
-                padding: 1rem;
+            .guest-photo {
+                width: 130px;
+                height: 130px;
             }
         }
 
         @media (max-width: 480px) {
             .guest-name {
-                font-size: 1.8rem;
-            }
-
-            .section-title {
-                font-size: 1.4rem;
-            }
-
-            .closing-message {
                 font-size: 1.6rem;
             }
 
-            .team-grid {
-                grid-template-columns: 1fr 1fr;
+            .guest-title {
+                font-size: 1.05rem;
+            }
+
+            .welcome-message {
+                font-size: 0.95rem;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Floating Particles -->
     <div class="particles" id="particles"></div>
 
-    <!-- Slide Counter -->
-    <div class="slide-counter">
-        <span id="current-slide">1</span> / <span id="total-slides">5</span>
-    </div>
-
-    <!-- Slider -->
-    <div class="slider-container">
-        <div class="slides-track" id="slides-track">
-
-            <!-- Slide 1: Welcome -->
-            <div class="slide slide-1">
-                <div class="slide-content">
-                    <div class="welcome-badge">Welcome to Gurgaon</div>
-                    <h1 class="guest-name">Rajesh Anand</h1>
-                    <p class="guest-title">Senior Manager</p>
-                    <div class="location-info">
-                        <span class="location-icon">&#128205;</span>
-                        <span>BIC Office, Gurgaon</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Slide 2: About the Visit -->
-            <div class="slide slide-2">
-                <div class="slide-content">
-                    <div class="section-label">The Purpose</div>
-                    <h2 class="section-title">Connecting In Person</h2>
-                    <p class="section-text">
-                        We are thrilled to host Rajesh Anand at our Gurgaon office for a special
-                        in-person visit to connect with the BIC team, share strategic insights,
-                        and strengthen the bond between leadership and the on-ground team.
-                    </p>
-                    <div class="visit-details">
-                        <div class="detail-card">
-                            <div class="detail-icon">&#128197;</div>
-                            <div class="detail-label">When</div>
-                            <div class="detail-value">Visit Day</div>
-                        </div>
-                        <div class="detail-card">
-                            <div class="detail-icon">&#127970;</div>
-                            <div class="detail-label">Where</div>
-                            <div class="detail-value">BIC Gurgaon Office</div>
-                        </div>
-                        <div class="detail-card">
-                            <div class="detail-icon">&#129309;</div>
-                            <div class="detail-label">Why</div>
-                            <div class="detail-value">Team Connect</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Slide 3: BIC Team -->
-            <div class="slide slide-3">
-                <div class="slide-content">
-                    <div class="section-label">Our Strengths</div>
-                    <h2 class="section-title">Meet the BIC Team</h2>
-                    <p class="section-text">
-                        Our Gurgaon BIC team brings together diverse expertise, unwavering dedication,
-                        and a shared passion for delivering excellence every day.
-                    </p>
-                    <div class="team-grid">
-                        <div class="team-value">
-                            <div class="team-value-icon">&#128640;</div>
-                            <div class="team-value-text">Innovation</div>
-                        </div>
-                        <div class="team-value">
-                            <div class="team-value-icon">&#129504;</div>
-                            <div class="team-value-text">Collaboration</div>
-                        </div>
-                        <div class="team-value">
-                            <div class="team-value-icon">&#127919;</div>
-                            <div class="team-value-text">Excellence</div>
-                        </div>
-                        <div class="team-value">
-                            <div class="team-value-icon">&#128161;</div>
-                            <div class="team-value-text">Problem Solving</div>
-                        </div>
-                        <div class="team-value">
-                            <div class="team-value-icon">&#127891;</div>
-                            <div class="team-value-text">Continuous Learning</div>
-                        </div>
-                        <div class="team-value">
-                            <div class="team-value-icon">&#11088;</div>
-                            <div class="team-value-text">Commitment</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Slide 4: Agenda -->
-            <div class="slide slide-4">
-                <div class="slide-content">
-                    <div class="section-label">What to Expect</div>
-                    <h2 class="section-title">Visit Agenda</h2>
-                    <div class="agenda-list">
-                        <div class="agenda-item">
-                            <div class="agenda-number">1</div>
-                            <div class="agenda-text">Welcome &amp; Introduction by the BIC Team</div>
-                        </div>
-                        <div class="agenda-item">
-                            <div class="agenda-number">2</div>
-                            <div class="agenda-text">Team Meet &amp; Greet &mdash; Get to Know Each Other</div>
-                        </div>
-                        <div class="agenda-item">
-                            <div class="agenda-number">3</div>
-                            <div class="agenda-text">Strategic Vision &amp; Insights from Rajesh</div>
-                        </div>
-                        <div class="agenda-item">
-                            <div class="agenda-number">4</div>
-                            <div class="agenda-text">Open Forum &amp; Interactive Q&amp;A Session</div>
-                        </div>
-                        <div class="agenda-item">
-                            <div class="agenda-number">5</div>
-                            <div class="agenda-text">Networking &amp; Team Bonding Activities</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Slide 5: Closing -->
-            <div class="slide slide-5">
-                <div class="confetti-container" id="confetti-container"></div>
-                <div class="slide-content">
-                    <h2 class="closing-message">We Are Excited<br>to Have You Here!</h2>
-                    <p class="closing-sub">
-                        The entire BIC team at Gurgaon looks forward to an inspiring
-                        and memorable visit with you, Rajesh.
-                    </p>
-                    <div class="bic-signature">
-                        <span class="bic-logo-text">BIC</span>
-                        <span>Team Gurgaon</span>
-                    </div>
-                </div>
-            </div>
-
+    <div class="welcome-card">
+        <div class="welcome-badge">Welcome to Gurgaon</div>
+        <br>
+        <img src="rajesh-anand.jpg" alt="Rajesh Anand" class="guest-photo">
+        <h1 class="guest-name">Rajesh Anand</h1>
+        <p class="guest-title">Senior Manager</p>
+        <div class="divider"></div>
+        <p class="welcome-message">
+            We are delighted to welcome you to the Gurgaon location for an in-person
+            connect with the BIC team. Your visit means a great deal to us and we look
+            forward to an engaging and inspiring time together.
+        </p>
+        <div class="location-info">
+            <span>&#128205;</span>
+            <span>Gurgaon Location</span>
         </div>
-    </div>
-
-    <!-- Navigation Controls -->
-    <div class="nav-controls">
-        <button class="nav-btn" id="prev-btn" disabled aria-label="Previous slide">&#9664;</button>
-        <div class="nav-dots" id="nav-dots">
-            <button class="nav-dot active" data-slide="0" aria-label="Go to slide 1"></button>
-            <button class="nav-dot" data-slide="1" aria-label="Go to slide 2"></button>
-            <button class="nav-dot" data-slide="2" aria-label="Go to slide 3"></button>
-            <button class="nav-dot" data-slide="3" aria-label="Go to slide 4"></button>
-            <button class="nav-dot" data-slide="4" aria-label="Go to slide 5"></button>
+        <br><br>
+        <div class="team-signature">
+            <span class="team-logo">BIC</span>
+            <span>Team Gurgaon</span>
         </div>
-        <button class="nav-btn" id="next-btn" aria-label="Next slide">&#9654;</button>
     </div>
 
     <script>
         (function () {
-            var TOTAL_SLIDES = 5;
-            var currentSlide = 0;
-
-            var track = document.getElementById('slides-track');
-            var prevBtn = document.getElementById('prev-btn');
-            var nextBtn = document.getElementById('next-btn');
-            var dots = document.querySelectorAll('.nav-dot');
-            var counterCurrent = document.getElementById('current-slide');
-
-            function goToSlide(index) {
-                if (index < 0 || index >= TOTAL_SLIDES) return;
-                currentSlide = index;
-                track.style.transform = 'translateX(-' + (currentSlide * 100) + 'vw)';
-
-                prevBtn.disabled = currentSlide === 0;
-                nextBtn.disabled = currentSlide === TOTAL_SLIDES - 1;
-
-                dots.forEach(function (dot, i) {
-                    dot.classList.toggle('active', i === currentSlide);
-                });
-
-                counterCurrent.textContent = currentSlide + 1;
-
-                if (currentSlide === TOTAL_SLIDES - 1) {
-                    spawnConfetti();
-                }
-            }
-
-            prevBtn.addEventListener('click', function () {
-                goToSlide(currentSlide - 1);
-            });
-
-            nextBtn.addEventListener('click', function () {
-                goToSlide(currentSlide + 1);
-            });
-
-            dots.forEach(function (dot) {
-                dot.addEventListener('click', function () {
-                    goToSlide(parseInt(dot.dataset.slide));
-                });
-            });
-
-            document.addEventListener('keydown', function (e) {
-                if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
-                    goToSlide(currentSlide + 1);
-                } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
-                    goToSlide(currentSlide - 1);
-                }
-            });
-
-            var touchStartX = 0;
-            var touchEndX = 0;
-
-            document.addEventListener('touchstart', function (e) {
-                touchStartX = e.changedTouches[0].screenX;
-            }, { passive: true });
-
-            document.addEventListener('touchend', function (e) {
-                touchEndX = e.changedTouches[0].screenX;
-                var diff = touchStartX - touchEndX;
-                if (Math.abs(diff) > 50) {
-                    if (diff > 0) goToSlide(currentSlide + 1);
-                    else goToSlide(currentSlide - 1);
-                }
-            }, { passive: true });
-
-            /* Floating particles */
-            var particlesContainer = document.getElementById('particles');
-            for (var i = 0; i < 30; i++) {
+            var container = document.getElementById('particles');
+            for (var i = 0; i < 25; i++) {
                 var p = document.createElement('div');
                 p.className = 'particle';
                 p.style.left = Math.random() * 100 + '%';
                 p.style.animationDuration = (8 + Math.random() * 12) + 's';
                 p.style.animationDelay = (Math.random() * 10) + 's';
-                p.style.width = (2 + Math.random() * 4) + 'px';
-                p.style.height = p.style.width;
-                particlesContainer.appendChild(p);
-            }
-
-            /* Confetti on last slide */
-            function spawnConfetti() {
-                var container = document.getElementById('confetti-container');
-                container.innerHTML = '';
-                var colors = ['#f59e0b', '#1a56db', '#059669', '#dc2626', '#7c3aed', '#ec4899'];
-                for (var i = 0; i < 50; i++) {
-                    var c = document.createElement('div');
-                    c.className = 'confetti';
-                    c.style.left = Math.random() * 100 + '%';
-                    c.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-                    c.style.animationDuration = (3 + Math.random() * 4) + 's';
-                    c.style.animationDelay = (Math.random() * 2) + 's';
-                    c.style.width = (6 + Math.random() * 8) + 'px';
-                    c.style.height = (6 + Math.random() * 8) + 'px';
-                    c.style.borderRadius = Math.random() > 0.5 ? '50%' : '2px';
-                    container.appendChild(c);
-                }
+                var size = (2 + Math.random() * 4) + 'px';
+                p.style.width = size;
+                p.style.height = size;
+                container.appendChild(p);
             }
         })();
     </script>
