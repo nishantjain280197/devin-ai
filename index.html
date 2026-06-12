@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BIC Entrance Exam Portal</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <h1 class="header-title">BIC Entrance Exam Portal</h1>
+            <p class="header-subtitle">New Employee Onboarding Assessment</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Step Indicator -->
+        <div class="step-indicator">
+            <div class="step active" id="step-indicator-1">
+                <span class="step-number">1</span>
+                <span class="step-label">Registration</span>
+            </div>
+            <div class="step-connector"></div>
+            <div class="step" id="step-indicator-2">
+                <span class="step-number">2</span>
+                <span class="step-label">Training</span>
+            </div>
+            <div class="step-connector"></div>
+            <div class="step" id="step-indicator-3">
+                <span class="step-number">3</span>
+                <span class="step-label">Quiz</span>
+            </div>
+            <div class="step-connector"></div>
+            <div class="step" id="step-indicator-4">
+                <span class="step-number">4</span>
+                <span class="step-label">Results</span>
+            </div>
+        </div>
+
+        <!-- Section 1: Registration -->
+        <section class="section" id="section-registration">
+            <div class="card">
+                <h2 class="card-title">Welcome, New Employee!</h2>
+                <p class="card-description">
+                    Before you begin working with client systems, you must complete the mandatory entrance exam.
+                    Please provide your details below to get started.
+                </p>
+                <form id="registration-form" class="form">
+                    <div class="form-group">
+                        <label for="employee-name">Full Name <span class="required">*</span></label>
+                        <input type="text" id="employee-name" name="employeeName" required placeholder="Enter your full name">
+                    </div>
+                    <div class="form-group">
+                        <label for="employee-id">Employee ID <span class="required">*</span></label>
+                        <input type="text" id="employee-id" name="employeeId" required placeholder="Enter your employee ID">
+                    </div>
+                    <div class="form-group">
+                        <label for="employee-email">Email Address <span class="required">*</span></label>
+                        <input type="email" id="employee-email" name="employeeEmail" required placeholder="Enter your corporate email">
+                    </div>
+                    <div class="form-group">
+                        <label for="employee-department">Department <span class="required">*</span></label>
+                        <select id="employee-department" name="employeeDepartment" required>
+                            <option value="">Select your department</option>
+                            <option value="claims">Claims</option>
+                            <option value="underwriting">Underwriting</option>
+                            <option value="policy-admin">Policy Administration</option>
+                            <option value="customer-service">Customer Service</option>
+                            <option value="it">Information Technology</option>
+                            <option value="finance">Finance</option>
+                            <option value="compliance">Compliance</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Proceed to Training</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Section 2: Training Content -->
+        <section class="section hidden" id="section-training">
+            <div class="card">
+                <h2 class="card-title">Training Material</h2>
+                <p class="card-description">
+                    Please review all training modules below before attempting the quiz.
+                    You must complete each module by expanding and reading through the content.
+                </p>
+
+                <div class="training-progress">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="training-progress-fill"></div>
+                    </div>
+                    <span class="progress-text" id="training-progress-text">0 of 5 modules completed</span>
+                </div>
+
+                <div class="training-modules">
+                    <div class="module" data-module="1">
+                        <button class="module-header" aria-expanded="false">
+                            <span class="module-title">
+                                <span class="module-icon">📋</span>
+                                Module 1: Information Security Fundamentals
+                            </span>
+                            <span class="module-status">Not Started</span>
+                        </button>
+                        <div class="module-content">
+                            <h3>Information Security Principles</h3>
+                            <p>Information security is the practice of protecting information by mitigating risks. It involves the prevention or reduction of the probability of unauthorized access, use, disclosure, disruption, modification, or destruction of information.</p>
+                            <h4>Key Principles (CIA Triad)</h4>
+                            <ul>
+                                <li><strong>Confidentiality</strong> — Ensuring information is accessible only to those authorized to access it. This includes client data, internal documents, and system credentials.</li>
+                                <li><strong>Integrity</strong> — Safeguarding the accuracy and completeness of information and processing methods. Data must not be altered by unauthorized parties.</li>
+                                <li><strong>Availability</strong> — Ensuring authorized users have access to information and associated assets when required.</li>
+                            </ul>
+                            <h4>Common Threats</h4>
+                            <ul>
+                                <li>Phishing attacks targeting employee credentials</li>
+                                <li>Social engineering to bypass security protocols</li>
+                                <li>Malware and ransomware infections</li>
+                                <li>Insider threats from negligent or malicious employees</li>
+                                <li>Unpatched software vulnerabilities</li>
+                            </ul>
+                            <h4>Your Responsibilities</h4>
+                            <p>As an employee, you are the first line of defense. Always verify email senders, never share passwords, and report suspicious activity immediately to the security team.</p>
+                            <button class="btn btn-small btn-complete" data-module="1">Mark as Complete</button>
+                        </div>
+                    </div>
+
+                    <div class="module" data-module="2">
+                        <button class="module-header" aria-expanded="false">
+                            <span class="module-title">
+                                <span class="module-icon">🔒</span>
+                                Module 2: Data Privacy & Client Confidentiality
+                            </span>
+                            <span class="module-status">Not Started</span>
+                        </button>
+                        <div class="module-content">
+                            <h3>Data Privacy Regulations</h3>
+                            <p>Working in the insurance industry requires strict compliance with data privacy regulations including HIPAA, GLBA, and state-specific privacy laws.</p>
+                            <h4>Client Data Handling Rules</h4>
+                            <ul>
+                                <li>Never store client data on local drives or personal devices</li>
+                                <li>Client data must only be stored in approved, encrypted repositories</li>
+                                <li>Do not share client information via personal email or messaging apps</li>
+                                <li>Hard-delete sensitive documents when no longer needed</li>
+                                <li>Always use secure, approved channels for data transfer</li>
+                            </ul>
+                            <h4>Personally Identifiable Information (PII)</h4>
+                            <p>PII includes any data that could identify a specific individual: name, SSN, date of birth, address, phone numbers, email addresses, policy numbers, and claim details.</p>
+                            <h4>Breach Notification</h4>
+                            <p>If you suspect a data breach or unauthorized access to client information, you must immediately notify your supervisor and the security team. Document what happened, when, and what data may have been affected.</p>
+                            <button class="btn btn-small btn-complete" data-module="2">Mark as Complete</button>
+                        </div>
+                    </div>
+
+                    <div class="module" data-module="3">
+                        <button class="module-header" aria-expanded="false">
+                            <span class="module-title">
+                                <span class="module-icon">💻</span>
+                                Module 3: Workstation & System Security
+                            </span>
+                            <span class="module-status">Not Started</span>
+                        </button>
+                        <div class="module-content">
+                            <h3>Workstation Security Policies</h3>
+                            <p>Your workstation is a critical access point to client systems. Maintaining its security is essential to protecting client data and company assets.</p>
+                            <h4>Clean Desk Policy</h4>
+                            <ul>
+                                <li>Lock your workstation (Win+L) whenever you step away</li>
+                                <li>Keep desks clear of sensitive documents when unattended</li>
+                                <li>Secure drawers with keys when not at your desk</li>
+                                <li>Display boards must not contain confidential information</li>
+                            </ul>
+                            <h4>Software & Device Rules</h4>
+                            <ul>
+                                <li>Only approved software from BIC/corporate sites may be installed</li>
+                                <li>USB devices are prohibited except for approved dongles</li>
+                                <li>Do not connect personal devices to your work laptop</li>
+                                <li>Install updates promptly and reboot weekly</li>
+                                <li>No personal browsing, streaming, or social media on work devices</li>
+                            </ul>
+                            <h4>Authentication</h4>
+                            <ul>
+                                <li>MFA/2FA must never be bypassed</li>
+                                <li>Never store passwords in browsers</li>
+                                <li>Use the corporate password manager for credential storage</li>
+                                <li>Change passwords immediately if compromise is suspected</li>
+                            </ul>
+                            <button class="btn btn-small btn-complete" data-module="3">Mark as Complete</button>
+                        </div>
+                    </div>
+
+                    <div class="module" data-module="4">
+                        <button class="module-header" aria-expanded="false">
+                            <span class="module-title">
+                                <span class="module-icon">📧</span>
+                                Module 4: Communication & Professional Conduct
+                            </span>
+                            <span class="module-status">Not Started</span>
+                        </button>
+                        <div class="module-content">
+                            <h3>Professional Communication Standards</h3>
+                            <p>Maintaining professional conduct in all communications reflects on the organization and ensures compliance with client requirements.</p>
+                            <h4>Email Usage</h4>
+                            <ul>
+                                <li>Use corporate email only for business purposes</li>
+                                <li>Never forward work materials to personal email accounts</li>
+                                <li>Do not send communications between internal and client systems unless authorized</li>
+                                <li>Verify recipients before sending sensitive information</li>
+                            </ul>
+                            <h4>Meeting Etiquette</h4>
+                            <ul>
+                                <li>Turn on video during client meetings when video is expected</li>
+                                <li>Maintain professional attire and a clean, well-lit background</li>
+                                <li>Join from a quiet, distraction-free environment</li>
+                                <li>Show eagerness to learn and contribute to discussions</li>
+                            </ul>
+                            <h4>Leave & Availability</h4>
+                            <ul>
+                                <li>Follow client-specific working hours</li>
+                                <li>Communicate leave plans well in advance</li>
+                                <li>Block calendars and set out-of-office messages on all platforms</li>
+                                <li>Provide daily status updates for assigned stories</li>
+                            </ul>
+                            <button class="btn btn-small btn-complete" data-module="4">Mark as Complete</button>
+                        </div>
+                    </div>
+
+                    <div class="module" data-module="5">
+                        <button class="module-header" aria-expanded="false">
+                            <span class="module-title">
+                                <span class="module-icon">⚖️</span>
+                                Module 5: Compliance & Incident Reporting
+                            </span>
+                            <span class="module-status">Not Started</span>
+                        </button>
+                        <div class="module-content">
+                            <h3>Regulatory Compliance</h3>
+                            <p>The insurance industry is heavily regulated. Non-compliance can result in significant fines, legal action, and reputational damage.</p>
+                            <h4>Key Regulations</h4>
+                            <ul>
+                                <li><strong>HIPAA</strong> — Protects health information in health insurance contexts</li>
+                                <li><strong>GLBA</strong> — Requires financial institutions to explain information-sharing practices</li>
+                                <li><strong>SOC 2</strong> — Defines criteria for managing customer data (security, availability, processing integrity, confidentiality, privacy)</li>
+                                <li><strong>State Regulations</strong> — Various state-specific insurance data protection laws</li>
+                            </ul>
+                            <h4>Incident Reporting Procedure</h4>
+                            <ol>
+                                <li>Identify and document the incident immediately</li>
+                                <li>Notify your direct supervisor within 30 minutes</li>
+                                <li>Contact the security/compliance team via the designated channel</li>
+                                <li>Preserve any evidence (do not delete logs or messages)</li>
+                                <li>Cooperate fully with the investigation team</li>
+                                <li>Follow up on corrective actions assigned to you</li>
+                            </ol>
+                            <h4>Consequences of Non-Compliance</h4>
+                            <p>Violations of security and compliance policies may result in removal from the account, disciplinary action, or termination of employment. Both client and corporate organizations have robust threat detection systems in place.</p>
+                            <button class="btn btn-small btn-complete" data-module="5">Mark as Complete</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="training-footer">
+                    <p class="training-note" id="training-note">Complete all 5 modules to unlock the quiz.</p>
+                    <button class="btn btn-primary" id="start-quiz-btn" disabled>Start Quiz</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Quiz -->
+        <section class="section hidden" id="section-quiz">
+            <div class="card">
+                <h2 class="card-title">Entrance Examination</h2>
+                <p class="card-description">
+                    Answer all questions below. You must answer every question before submitting.
+                    A minimum score of 80% is required to pass.
+                </p>
+
+                <div class="quiz-info">
+                    <span class="quiz-info-item">Total Questions: <strong>10</strong></span>
+                    <span class="quiz-info-item">Passing Score: <strong>80%</strong></span>
+                    <span class="quiz-info-item">Attempts: <strong>Unlimited</strong></span>
+                </div>
+
+                <form id="quiz-form" class="quiz-form">
+                    <div id="quiz-questions"></div>
+
+                    <div class="quiz-validation-message hidden" id="quiz-validation-message">
+                        <p>Please answer all questions before submitting.</p>
+                    </div>
+
+                    <div class="quiz-footer">
+                        <span class="quiz-answered" id="quiz-answered">0 of 10 answered</span>
+                        <button type="submit" class="btn btn-primary" id="submit-quiz-btn">Submit Exam</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- Section 4: Results -->
+        <section class="section hidden" id="section-results">
+            <div class="card">
+                <div id="results-content"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 BIC Entrance Exam Portal. For authorized use only.</p>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
